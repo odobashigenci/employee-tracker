@@ -1,8 +1,5 @@
-# employee-tracker
-A command-line application that manages a company's employee database, using Node.js, Inquirer, and MySQL.
-# Note Taker
-
-  As a small business owner I want to be able to write and save notes, so that I can organize my thoughts and keep track of tasks I need to complete.
+  # employee-tracker
+  A command-line application that manages a company's employee database, using Node.js, Inquirer, and MySQL.
 
   </br>
   
@@ -12,16 +9,13 @@ A command-line application that manages a company's employee database, using Nod
   
   ## Description
   
-  Through this app you can add and delete notes so you stay organized and keep track of the tasks you have to complete in your business.
+  Stay organized and keep track of all your emplyees, their roles, and the departments they work in by using this database.
   
   </br>
 
   ## Table of Content
   
-- [employee-tracker](#employee-tracker)
-- [Note Taker](#note-taker)
   - [Description](#description)
-  - [Table of Content](#table-of-content)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Link](#link)
@@ -29,29 +23,28 @@ A command-line application that manages a company's employee database, using Nod
   - [License](#license)
   - [Contributing](#contributing)
   - [Questions and Issues](#questions-and-issues)
-    - [GitHub account](#github-account)
-    - [Email me](#email-me)
-
+   
   </br>
 
   ## Installation
   
-  To install this app clone the code into your preferred directory.
+  To install this app, download the files or clone the code into your preferred directory.
   
   </br>
   
   ## Usage
   
-  Run the "npm start" command in yur terminal, and then run "http://localhost:3001/notes" in your browser. Or simply launch the app by following     the link below. 
-  Enter a note title that you chose, and below it enter the notes that you need to take down. 
-  A save button will appear on the top right corner of the screen. Click it once you are finished taking the notes. This note will be saved in the left column,
-  and you can access it any time you need to.
+  Using the comand line in your terminal, navigate into employee-tracker/develop, and run the node index.js command. 
+  Navigate throught the sections prompted, and select the one that you want to view or midify. 
+  You can add or remove emplyees, roles, or departments as you need. 
+  When you are finished, sipmly select exit, and you   will return in your directory.
+  For more watch the video below 👇
   
   </br>
   
   ## Link
   
-  To lunch the app click here  👉  [![Heroku Badge](https://www.herokucdn.com/deploy/button.svg)](https://note-taker-genci.herokuapp.com/notes)
+  [Demo](https://drive.google.com/file/d/1D24iIqFe92vWmXudyHGxY3y2pIWGHs8t/view)
 
   </br>
   

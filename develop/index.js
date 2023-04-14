@@ -29,6 +29,7 @@ function startQuestions() {
         "Remove Role",
         "Add Department",
         "Remove Department",
+        "Exit",
       ],
     },
   ]).then((data) => {
@@ -59,7 +60,10 @@ function startQuestions() {
         break; 
       case "Remove Department":
         removeDepartment();
-        break;     
+        break;
+      case "Exit":
+        exit(); 
+        break;      
     }
   });
 }
@@ -116,7 +120,7 @@ function addEmployee() {
           prompt({
             type: 'list',
             name: 'selectedManager',
-            message: 'Who is their manager?',
+            message: 'Who is their manager? (you must select one)',
             choices: managerChoices,
           }).then(managerRes => {
             const managerId = managerRes.selectedManager;
@@ -255,12 +259,17 @@ function removeDepartment() {
 
       connection.promise().query('DELETE FROM department WHERE id = ?', departmentId)
         .then(() => {
-          console.log(`Department with id ${departmentId} has been removed.\n`);
+          console.log(`Department with id ${departmentId} has been removed successfully.\n`);
           startQuestions();
         })
         .catch(err => console.log(err));
     });
   });
 }
+
+function exit() {
+    console.log("Goodbye!");
+    process.exit(0);
+  }
 
 startQuestions();

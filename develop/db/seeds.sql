@@ -1,30 +1,31 @@
 INSERT INTO department (department_name)
-VALUES ("Central Control"),
-       ("Linehaul"),
-       ("Operations"),
-       ("HR"),
-       ("QA"),
-       ("Maintenance");
+VALUES ("Goal"),
+       ("Defence"),
+       ("Midfield"),
+       ("Atack"),
+       ("Bench"),
+       ("Headquarters");
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("Ops Manager", 55000, 1),
-       ("Coordinator", 50000, 2),
-       ("Ops Admin", 40000, 2),
-       ("Area Manager", 65000, 3),
-       ("Sort Manager", 85000, 3),
-       ("Associate", 50000, 4),
-       ("Business Partner", 85000, 4),
-       ("QA Specialist", 40000, 5),
-       ("Technician", 60000, 6),
-       ("Engineer", 75000, 6);
+VALUES ("Goalkeeper", 55000, 1),
+       ("Full Back", 65000, 2),
+       ("Wing Back", 60000, 2),
+       ("Attacking Midfielder", 75000, 3),
+       ("Defensive Midfielder", 80000, 3),
+       ("Striker", 100000, 4),
+       ("Center Forward", 90000, 5),
+       ("Coach", 20000, 5),
+       ("CEO", 60000, 6);
+       
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Gareth", "Bale", 1, 1),
-       ("Harry", "Kane", 2, 2),
-       ("Erling", "Haaland", 3, 3),
-       ("Bernardo", "Silva", 4, 3),
-       ("Rafael", "Leao", 4, 4),
-       ("Zlatan", "Ibrahimovic", 4, 2),
-       ("Sandro", "Tonali", 5, 1),
-       ("Lionel", "Messi", 6, 6),
-       ("Cristiano", "Ronaldo", 6, 7);
+VALUES ("Hugo", "Lloris", 1, 1),
+       ("Petr", "Cech", 1, 1),
+       ("Sergio", "Ramos", 2, 2),
+       ("Theo", "Hernandez", 3, 2),
+       ("Gareth", "Bale", 4, 3),
+       ("Sergio", "Busquets", 5, 3),
+       ("Kylian", "Mbappe", 6, 4),
+       ("Erling", "Haaland", 7, 4),
+       ("Jurgen", "Klopp", 8, 5),
+       ("Florentino", "Perez", 9, 6);

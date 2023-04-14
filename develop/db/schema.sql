@@ -20,7 +20,7 @@ CREATE TABLE employee (
     first_name VARCHAR(20) NOT NULL,
     last_name VARCHAR(20) NOT NULL,
     role_id INT NOT NULL,
-    INDEX role_ind (role_id),
+    INDEX role_id (role_id),
     CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id),
     manager_id INT NOT NULL
 );

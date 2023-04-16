@@ -14,8 +14,7 @@
   </br>
 
   ## Table of Content
-  
-  - [Description](#description)
+
   - [Installation](#installation)
   - [Usage](#usage)
   - [Link](#link)
@@ -23,6 +22,7 @@
   - [License](#license)
   - [Contributing](#contributing)
   - [Questions and Issues](#questions-and-issues)
+
    
   </br>
 
@@ -33,11 +33,12 @@
   </br>
   
   ## Usage
-  
+
   Using the comand line in your terminal, navigate into employee-tracker/develop directory, and run the "node index.js" command. 
   Navigate throught the sections prompted, and select the one that you want to view or modify. 
   You can add or remove emplyees, roles, or departments as you need. 
   When you are finished, sipmly select exit, and you will return in your directory.
+
   For more watch the video below 👇
   
   </br>
@@ -52,14 +53,16 @@
   
   <div align = "center">
   
+  
   ![Preview](assets/picture/preview.png)
+
   
   </div>
   
   </br>
   
   ## License
-  
+
   This application is covered under [MIT License](https://choosealicense.com/licenses/mit/)
   
   </br>

@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 const { prompt } = require("inquirer");
 require("console.table");
 dotenv.config();
+
+// creating mysql connection
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -13,6 +15,8 @@ const connection = mysql.createConnection({
 connection.connect((err) => {
   if (err) throw err;
 });
+
+// starting prompted questions
 function startQuestions() {
   prompt([
     {
@@ -32,6 +36,9 @@ function startQuestions() {
         "Exit",
       ],
     },
+
+// switch statement running trough the prompted questions, 
+// and returning the function of the question selected
   ]).then((data) => {
     switch (data.Option) {
       case "View All Employees":
@@ -67,6 +74,8 @@ function startQuestions() {
     }
   });
 }
+
+// returning a list of all employees saved on employee table
 function viewAllEmployees() {
   const data = connection.promise().query("SELECT * FROM employee");
   data.then(([data]) => {
@@ -75,6 +84,7 @@ function viewAllEmployees() {
   });
 }
 
+// returning a list of all roles saved on role table
 function viewAllRoles() {
   const data = connection.promise().query("SELECT * FROM role");
   data.then(([data]) => {
@@ -83,6 +93,7 @@ function viewAllRoles() {
   });
 }
 
+// returning a list of all departments saved on department table
 function viewAllDepartments() {
     const data = connection.promise().query("SELECT * FROM department");
     data.then(([data]) => {
@@ -91,6 +102,7 @@ function viewAllDepartments() {
     });
   }
 
+// adding a new employee into employee table
 function addEmployee() {
   prompt([
     { name: "firstName", message: "What is the employee`s first name?" },
@@ -102,6 +114,8 @@ function addEmployee() {
             name: title,
             value: id
         }))
+
+        // defining the role of the new employee added
         prompt({
             type: 'list',
             name: 'selectedRole',
@@ -117,6 +131,7 @@ function addEmployee() {
           }));
           managerChoices.unshift({name: 'None', value: null});
 
+          // defining the who is the manager of the new employee added
           prompt({
             type: 'list',
             name: 'selectedManager',
@@ -139,6 +154,7 @@ function addEmployee() {
   });
 }
 
+// removing an employee from employee table
 function removeEmployee(){
   prompt({
     name: "id",
@@ -151,6 +167,7 @@ function removeEmployee(){
   })
 }
 
+// adding a new role into role table
 function addRole(){
   const questions = [
     {
@@ -166,6 +183,8 @@ function addRole(){
       message: "Under which department do you want this role to be added?"
     }
   ];
+
+  // defining the title, salary, and department of the new role that will be added
   prompt(questions).then(({ title, salary, department}) => {
     const insertQuery = "INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)";
     const getDepartmentQuery = "SELECT id FROM department WHERE department_name = ?";
@@ -188,6 +207,7 @@ function addRole(){
   })
 }
 
+// removing a role from role table
 function removeRole() {
   const getRoleQuery = "SELECT * FROM role";
   connection.promise().query(getRoleQuery).then(([roles]) => {
@@ -221,6 +241,7 @@ function removeRole() {
   })
 }
 
+// adding a new department into department table
 function addDepartment(){
   prompt([
     {
@@ -241,6 +262,7 @@ function addDepartment(){
   });
 }
 
+// removing a department from department table
 function removeDepartment() {
   const departmentData = connection.promise().query('SELECT * FROM department');
   departmentData.then(([data]) => {
@@ -249,6 +271,7 @@ function removeDepartment() {
       value: id,
     }));
 
+    // listing all the department from which to choose which one will be removed
     prompt({
       type: 'list',
       name: 'selectedDepartment',
@@ -267,9 +290,11 @@ function removeDepartment() {
   });
 }
 
+// exiting the node.js process and returnting to the terminal
 function exit() {
     console.log("Goodbye!");
     process.exit(0);
   }
 
+// calling the function to start the prompted questions
 startQuestions();

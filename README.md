@@ -28,7 +28,7 @@
 
   ## Installation
   
-  To install this app, download the files or clone the code into your preferred directory.
+  To install this app, download the files or clone the repo into your preferred directory.
   
   </br>
   
